@@ -54,7 +54,7 @@ class Rule(KLCRule):
             x, y = line['end']['x'], line['end']['y']
             x = int( (x + (0.0000001 if x >= 0 else -0.0000001))*1E6 )
             y = int( (y + (0.0000001 if y >= 0 else -0.0000001))*1E6 )
-            end_is_wrong = (x % 0.05E6) or (y % 0.05E6)
+            end_is_wrong = (x % 0.01E6) or (y % 0.01E6)
             nanometers['end'] = {'x':x, 'y':y}
 
             if start_is_wrong or end_is_wrong:
